@@ -1,0 +1,35 @@
+2023-07-24 22:33:42,750 - monitor  - line:73 - INFO - Initializing writer
+2023-07-24 22:33:43,709 - monitor  - line:73 - INFO - start training
+2023-07-24 22:33:43,709 - monitor  - line:73 - INFO - start validation
+2023-07-24 22:33:49,028 - monitor  - line:73 - INFO - acc : 0.03277153521776199
+2023-07-24 22:34:07,902 - monitor  - line:73 - INFO - tensor(0.2274, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:34:27,373 - monitor  - line:73 - INFO - tensor(0.1701, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:34:46,924 - monitor  - line:73 - INFO - tensor(0.1531, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:35:06,244 - monitor  - line:73 - INFO - tensor(0.1486, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:35:25,874 - monitor  - line:73 - INFO - tensor(0.1454, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:35:45,166 - monitor  - line:73 - INFO - tensor(0.1420, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:36:04,277 - monitor  - line:73 - INFO - tensor(0.1425, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:36:23,382 - monitor  - line:73 - INFO - tensor(0.1419, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:36:24,470 - monitor  - line:73 - INFO - start validation
+2023-07-24 22:36:28,541 - monitor  - line:73 - INFO - acc : 0.15168540179729462
+2023-07-24 22:36:35,603 - monitor  - line:73 - INFO - tensor(0.1377, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:36:43,061 - monitor  - line:73 - INFO - tensor(0.1370, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:36:50,626 - monitor  - line:73 - INFO - tensor(0.1366, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:36:58,241 - monitor  - line:73 - INFO - tensor(0.1342, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:05,833 - monitor  - line:73 - INFO - tensor(0.1323, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:13,339 - monitor  - line:73 - INFO - tensor(0.1334, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:20,903 - monitor  - line:73 - INFO - tensor(0.1289, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:28,536 - monitor  - line:73 - INFO - tensor(0.1319, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:29,898 - monitor  - line:73 - INFO - start validation
+2023-07-24 22:37:33,981 - monitor  - line:73 - INFO - acc : 0.3323970139026642
+2023-07-24 22:37:40,775 - monitor  - line:73 - INFO - tensor(0.1297, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:48,244 - monitor  - line:73 - INFO - tensor(0.1292, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:37:55,794 - monitor  - line:73 - INFO - tensor(0.1266, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:38:03,339 - monitor  - line:73 - INFO - tensor(0.1238, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:38:10,929 - monitor  - line:73 - INFO - tensor(0.1269, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:38:18,503 - monitor  - line:73 - INFO - tensor(0.1266, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:38:26,096 - monitor  - line:73 - INFO - tensor(0.1282, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:38:33,646 - monitor  - line:73 - INFO - tensor(0.1270, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)
+2023-07-24 22:38:34,848 - monitor  - line:73 - INFO - start validation
+2023-07-24 22:38:38,936 - monitor  - line:73 - INFO - acc : 0.43913859128952026
+2023-07-24 22:38:45,446 - monitor  - line:73 - INFO - tensor(0.1210, device='cuda:0', grad_fn=<BinaryCrossEntropyWithLogitsBackward>)

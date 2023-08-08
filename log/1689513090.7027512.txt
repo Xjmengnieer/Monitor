@@ -1,0 +1,23 @@
+2023-07-16 21:11:30,703 - monitor  - line:73 - INFO - Initializing writer
+2023-07-16 21:11:32,553 - monitor  - line:73 - INFO - start training
+2023-07-16 21:11:34,052 - monitor  - line:73 - INFO - start validation
+2023-07-16 21:11:39,609 - monitor  - line:73 - INFO - acc : 0.02340823970735073
+2023-07-16 21:11:46,256 - monitor  - line:73 - INFO - tensor(2.7065, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:11:53,098 - monitor  - line:73 - INFO - tensor(2.0106, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:11:59,830 - monitor  - line:73 - INFO - tensor(1.8182, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:12:06,665 - monitor  - line:73 - INFO - tensor(1.4457, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:12:13,433 - monitor  - line:73 - INFO - tensor(1.6651, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:12:20,109 - monitor  - line:73 - INFO - tensor(1.4652, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:12:26,909 - monitor  - line:73 - INFO - tensor(1.2373, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:12:33,679 - monitor  - line:73 - INFO - tensor(0.7763, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:13:20,981 - monitor  - line:73 - INFO - start validation
+2023-07-16 21:13:51,400 - monitor  - line:73 - INFO - acc : 0.7013108730316162
+2023-07-16 21:13:57,669 - monitor  - line:73 - INFO - tensor(0.8949, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:04,482 - monitor  - line:73 - INFO - tensor(1.1119, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:11,159 - monitor  - line:73 - INFO - tensor(0.7654, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:18,036 - monitor  - line:73 - INFO - tensor(0.9229, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:24,758 - monitor  - line:73 - INFO - tensor(1.2996, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:31,478 - monitor  - line:73 - INFO - tensor(0.9735, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:38,281 - monitor  - line:73 - INFO - tensor(0.8589, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:45,006 - monitor  - line:73 - INFO - tensor(1.0394, device='cuda:0', grad_fn=<NllLossBackward>)
+2023-07-16 21:14:52,468 - monitor  - line:73 - INFO - start validation

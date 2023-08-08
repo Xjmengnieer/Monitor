@@ -1,0 +1,142 @@
+2023-07-25 14:47:08,310 - monitor  - line:73 - INFO - Initializing writer
+2023-07-25 14:47:09,252 - monitor  - line:73 - INFO - start training
+2023-07-25 14:47:09,253 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:47:15,791 - monitor  - line:73 - INFO - recall : 0.5664793848991394
+2023-07-25 14:47:15,792 - monitor  - line:73 - INFO - precession : 0.034209784120321274
+2023-07-25 14:47:23,386 - monitor  - line:73 - INFO - tensor(0.8776, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:47:30,916 - monitor  - line:73 - INFO - tensor(0.8688, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:47:38,429 - monitor  - line:73 - INFO - tensor(0.8407, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:47:45,953 - monitor  - line:73 - INFO - tensor(0.8320, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:47:53,486 - monitor  - line:73 - INFO - tensor(0.8299, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:01,134 - monitor  - line:73 - INFO - tensor(0.8167, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:08,643 - monitor  - line:73 - INFO - tensor(0.8149, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:16,098 - monitor  - line:73 - INFO - tensor(0.8087, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:16,594 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:48:21,787 - monitor  - line:73 - INFO - recall : 0.7219101190567017
+2023-07-25 14:48:21,787 - monitor  - line:73 - INFO - precession : 0.06040426343679428
+2023-07-25 14:48:28,821 - monitor  - line:73 - INFO - tensor(0.8039, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:36,362 - monitor  - line:73 - INFO - tensor(0.7984, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:47,959 - monitor  - line:73 - INFO - tensor(0.7993, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:48:55,526 - monitor  - line:73 - INFO - tensor(0.7948, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:03,098 - monitor  - line:73 - INFO - tensor(0.7959, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:10,644 - monitor  - line:73 - INFO - tensor(0.7936, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:18,187 - monitor  - line:73 - INFO - tensor(0.7951, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:25,631 - monitor  - line:73 - INFO - tensor(0.7881, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:26,450 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:49:31,643 - monitor  - line:73 - INFO - recall : 0.7415730357170105
+2023-07-25 14:49:31,643 - monitor  - line:73 - INFO - precession : 0.0586710125207901
+2023-07-25 14:49:38,287 - monitor  - line:73 - INFO - tensor(0.7845, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:45,936 - monitor  - line:73 - INFO - tensor(0.7828, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:49:53,439 - monitor  - line:73 - INFO - tensor(0.7807, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:00,917 - monitor  - line:73 - INFO - tensor(0.7767, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:08,478 - monitor  - line:73 - INFO - tensor(0.7770, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:16,078 - monitor  - line:73 - INFO - tensor(0.7735, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:23,624 - monitor  - line:73 - INFO - tensor(0.7737, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:31,102 - monitor  - line:73 - INFO - tensor(0.7733, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:32,163 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:50:37,357 - monitor  - line:73 - INFO - recall : 0.682584285736084
+2023-07-25 14:50:37,357 - monitor  - line:73 - INFO - precession : 0.06323184818029404
+2023-07-25 14:50:43,831 - monitor  - line:73 - INFO - tensor(0.7748, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:50:51,269 - monitor  - line:73 - INFO - tensor(0.7725, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:01,963 - monitor  - line:73 - INFO - tensor(0.7737, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:09,566 - monitor  - line:73 - INFO - tensor(0.7706, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:17,113 - monitor  - line:73 - INFO - tensor(0.7749, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:24,705 - monitor  - line:73 - INFO - tensor(0.7690, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:32,345 - monitor  - line:73 - INFO - tensor(0.7697, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:39,763 - monitor  - line:73 - INFO - tensor(0.7688, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:51:41,143 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:51:46,359 - monitor  - line:73 - INFO - recall : 0.6498127579689026
+2023-07-25 14:51:46,359 - monitor  - line:73 - INFO - precession : 0.0674310177564621
+2023-07-25 14:51:52,586 - monitor  - line:73 - INFO - tensor(0.7686, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:00,082 - monitor  - line:73 - INFO - tensor(0.7693, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:07,633 - monitor  - line:73 - INFO - tensor(0.7667, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:15,115 - monitor  - line:73 - INFO - tensor(0.7675, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:22,776 - monitor  - line:73 - INFO - tensor(0.7700, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:31,701 - monitor  - line:73 - INFO - tensor(0.7663, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:39,253 - monitor  - line:73 - INFO - tensor(0.7683, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:46,867 - monitor  - line:73 - INFO - tensor(0.7663, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:52:48,529 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:52:53,714 - monitor  - line:73 - INFO - recall : 0.6619850397109985
+2023-07-25 14:52:53,714 - monitor  - line:73 - INFO - precession : 0.07157319039106369
+2023-07-25 14:52:59,580 - monitor  - line:73 - INFO - tensor(0.7664, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:07,106 - monitor  - line:73 - INFO - tensor(0.7662, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:14,747 - monitor  - line:73 - INFO - tensor(0.7653, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:22,259 - monitor  - line:73 - INFO - tensor(0.7660, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:29,778 - monitor  - line:73 - INFO - tensor(0.7663, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:37,301 - monitor  - line:73 - INFO - tensor(0.7660, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:44,858 - monitor  - line:73 - INFO - tensor(0.7658, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:52,445 - monitor  - line:73 - INFO - tensor(0.7646, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:53:54,442 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:53:59,647 - monitor  - line:73 - INFO - recall : 0.7387640476226807
+2023-07-25 14:53:59,648 - monitor  - line:73 - INFO - precession : 0.06348567456007004
+2023-07-25 14:54:05,172 - monitor  - line:73 - INFO - tensor(0.7655, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:12,822 - monitor  - line:73 - INFO - tensor(0.7647, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:20,374 - monitor  - line:73 - INFO - tensor(0.7652, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:27,809 - monitor  - line:73 - INFO - tensor(0.7653, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:35,355 - monitor  - line:73 - INFO - tensor(0.7652, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:42,801 - monitor  - line:73 - INFO - tensor(0.7648, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:50,354 - monitor  - line:73 - INFO - tensor(0.7656, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:54:57,976 - monitor  - line:73 - INFO - tensor(0.7654, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:00,270 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:55:05,474 - monitor  - line:73 - INFO - recall : 0.7434456944465637
+2023-07-25 14:55:05,474 - monitor  - line:73 - INFO - precession : 0.06214291229844093
+2023-07-25 14:55:10,728 - monitor  - line:73 - INFO - tensor(0.7662, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:18,203 - monitor  - line:73 - INFO - tensor(0.7658, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:25,751 - monitor  - line:73 - INFO - tensor(0.7643, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:33,399 - monitor  - line:73 - INFO - tensor(0.7648, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:40,983 - monitor  - line:73 - INFO - tensor(0.7636, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:48,485 - monitor  - line:73 - INFO - tensor(0.7636, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:55:55,997 - monitor  - line:73 - INFO - tensor(0.7641, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:03,515 - monitor  - line:73 - INFO - tensor(0.7633, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:06,063 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:56:11,244 - monitor  - line:73 - INFO - recall : 0.7453183531761169
+2023-07-25 14:56:11,245 - monitor  - line:73 - INFO - precession : 0.06027563288807869
+2023-07-25 14:56:16,084 - monitor  - line:73 - INFO - tensor(0.7638, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:23,580 - monitor  - line:73 - INFO - tensor(0.7626, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:31,074 - monitor  - line:73 - INFO - tensor(0.7628, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:38,720 - monitor  - line:73 - INFO - tensor(0.7636, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:46,195 - monitor  - line:73 - INFO - tensor(0.7642, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:56:53,725 - monitor  - line:73 - INFO - tensor(0.7643, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:01,276 - monitor  - line:73 - INFO - tensor(0.7643, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:08,797 - monitor  - line:73 - INFO - tensor(0.7626, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:11,650 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:57:16,862 - monitor  - line:73 - INFO - recall : 0.665730357170105
+2023-07-25 14:57:16,862 - monitor  - line:73 - INFO - precession : 0.0768316388130188
+2023-07-25 14:57:21,550 - monitor  - line:73 - INFO - tensor(0.7629, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:29,028 - monitor  - line:73 - INFO - tensor(0.7633, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:36,629 - monitor  - line:73 - INFO - tensor(0.7626, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:44,253 - monitor  - line:73 - INFO - tensor(0.7640, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:51,802 - monitor  - line:73 - INFO - tensor(0.7643, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:57:59,417 - monitor  - line:73 - INFO - tensor(0.7632, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:06,892 - monitor  - line:73 - INFO - tensor(0.7632, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:14,410 - monitor  - line:73 - INFO - tensor(0.7653, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:17,561 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:58:22,766 - monitor  - line:73 - INFO - recall : 0.7368913888931274
+2023-07-25 14:58:22,766 - monitor  - line:73 - INFO - precession : 0.06504669785499573
+2023-07-25 14:58:27,120 - monitor  - line:73 - INFO - tensor(0.7633, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:34,652 - monitor  - line:73 - INFO - tensor(0.7616, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:42,211 - monitor  - line:73 - INFO - tensor(0.7610, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:49,690 - monitor  - line:73 - INFO - tensor(0.7617, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:58:57,260 - monitor  - line:73 - INFO - tensor(0.7619, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:04,880 - monitor  - line:73 - INFO - tensor(0.7614, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:12,381 - monitor  - line:73 - INFO - tensor(0.7620, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:19,926 - monitor  - line:73 - INFO - tensor(0.7614, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:23,421 - monitor  - line:73 - INFO - start validation
+2023-07-25 14:59:28,625 - monitor  - line:73 - INFO - recall : 0.7949438095092773
+2023-07-25 14:59:28,625 - monitor  - line:73 - INFO - precession : 0.0756886899471283
+2023-07-25 14:59:32,723 - monitor  - line:73 - INFO - tensor(0.7616, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:40,363 - monitor  - line:73 - INFO - tensor(0.7607, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:47,851 - monitor  - line:73 - INFO - tensor(0.7617, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 14:59:55,373 - monitor  - line:73 - INFO - tensor(0.7608, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:02,891 - monitor  - line:73 - INFO - tensor(0.7618, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:10,468 - monitor  - line:73 - INFO - tensor(0.7613, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:18,000 - monitor  - line:73 - INFO - tensor(0.7628, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:25,562 - monitor  - line:73 - INFO - tensor(0.7637, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:29,282 - monitor  - line:73 - INFO - start validation
+2023-07-25 15:00:34,492 - monitor  - line:73 - INFO - recall : 0.7893258333206177
+2023-07-25 15:00:34,492 - monitor  - line:73 - INFO - precession : 0.07697224617004395
+2023-07-25 15:00:38,268 - monitor  - line:73 - INFO - tensor(0.7615, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:45,922 - monitor  - line:73 - INFO - tensor(0.7619, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:00:53,629 - monitor  - line:73 - INFO - tensor(0.7614, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:01:01,335 - monitor  - line:73 - INFO - tensor(0.7626, device='cuda:0', grad_fn=<AddBackward0>)
+2023-07-25 15:01:08,975 - monitor  - line:73 - INFO - tensor(0.7624, device='cuda:0', grad_fn=<AddBackward0>)
