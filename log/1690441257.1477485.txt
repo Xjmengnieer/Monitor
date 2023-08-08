@@ -1,6 +1,0 @@
-2023-07-27 15:00:57,147 - monitor  - line:74 - INFO - Initializing writer
-2023-07-27 15:00:58,082 - monitor  - line:74 - INFO - start training
-2023-07-27 15:00:58,082 - monitor  - line:74 - INFO - start validation
-2023-07-27 15:01:03,737 - monitor  - line:74 - INFO - recall : 0.03838951310861423
-2023-07-27 15:01:03,737 - monitor  - line:74 - INFO - precession : 0.02934860415175376
-2023-07-27 15:01:17,082 - monitor  - line:74 - INFO - tensor(0.4924, device='cuda:0', grad_fn=<AddBackward0>)

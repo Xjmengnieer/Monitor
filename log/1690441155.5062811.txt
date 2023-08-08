@@ -1,5 +1,0 @@
-2023-07-27 14:59:15,506 - monitor  - line:74 - INFO - Initializing writer
-2023-07-27 14:59:16,438 - monitor  - line:74 - INFO - start training
-2023-07-27 14:59:16,438 - monitor  - line:74 - INFO - start validation
-2023-07-27 14:59:22,066 - monitor  - line:74 - INFO - recall : 0.047752808988764044
-2023-07-27 14:59:22,066 - monitor  - line:74 - INFO - precession : 0.039140445126630855

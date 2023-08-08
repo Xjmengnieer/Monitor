@@ -1,4 +1,0 @@
-2023-07-24 22:14:39,848 - monitor  - line:73 - INFO - Initializing writer
-2023-07-24 22:14:41,701 - monitor  - line:73 - INFO - start training
-2023-07-24 22:14:41,702 - monitor  - line:73 - INFO - start validation
-2023-07-24 22:14:47,307 - monitor  - line:73 - INFO - acc : 0.03558052331209183

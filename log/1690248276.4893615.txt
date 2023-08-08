@@ -1,3 +1,0 @@
-2023-07-25 09:24:36,489 - monitor  - line:73 - INFO - Initializing writer
-2023-07-25 09:24:38,349 - monitor  - line:73 - INFO - start training
-2023-07-25 09:24:38,349 - monitor  - line:73 - INFO - start validation
