@@ -1,25 +1,12 @@
 import os
 import cv2
 from tqdm import tqdm
+from datasets.validIds import validIds
 
-videos_path = '/home/data/monitor/fire_video/'
-save_path = '/home/data/monitor/fire_video/frames'
+imgnet_path = '/home/data/monitor/train'
 
-if not os.path.exists(save_path):
-    os.makedirs(save_path)
+dirs = []
+for key, value in validIds.items():
+    dirs.append(value['dir'])
 
-videos = os.listdir(videos_path)
-
-i = 0
-for videoName in tqdm(videos):
-    videoPath = os.path.join(videos_path, videoName)
-    videoCap = cv2.VideoCapture(videoPath)
-
-    ret, frame = videoCap.read()
-    
-    while ret:
-        imgPath = os.path.join(save_path, '04%d'%i + '.jpg')
-        i += 1
-        
-        cv2.imwrite(imgPath, frame)
-        ret, frame = videoCap.read()
+    dir_path = os.path.join(imgnet_path, value['dir'])
