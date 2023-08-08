@@ -3,15 +3,28 @@ import shutil
 import os
 
 from tqdm import tqdm
-from init_train_cate import init_cates
+from init_train_cate import init_cates,id2dirname
 
-img_root_path = '/home/data/monitor/init_train/'
-init_train_json = '/home/data/monitor/init_train.json'
+img_root_path = 'data/monitor/init/train'
+init_train_json = 'datasets/init_train_cate.py'
 
-test_img_path = '/home/data/monitor/init_val/'
+test_img_path = 'data/monitor/init/val'
 
 test_percent = 0.1     #percent of train_pic
-
+#将文件id转换为文件名
+file_list = os.listdir(img_root_path)
+for file_name in file_list:
+    file_path = os.path.join(img_root_path, file_name)
+    
+    # 2. 提取类别ID，并将文件名替换为对应的类别名称
+    class_id = file_name.split('_')[0]
+    class_name = id2dirname.get(class_id, 'unknown')  # 通过ID获取类别名称，如果不存在则用'unknown'代替
+    new_file_name = f'{class_name}'
+    
+    # 3. 将替换后的文件名应用到对应的文件
+    new_file_path = os.path.join(img_root_path, new_file_name)
+    os.rename(file_path, new_file_path)
+    
 sub_dirs = os.listdir(img_root_path)
 
 nums = 0
@@ -32,8 +45,8 @@ for sub_dir in sub_dirs:
     for img_name in tqdm(random.sample(img_nums, val_num)):
         img_path = os.path.join(sub_dir_path, img_name)
         val_img_path = os.path.join(val_path, img_name)
-        os.system(f'mv {img_path} {val_img_path}')
-
+        # os.system(f'mv {img_path} {val_img_path}')
+        shutil.move(img_path, val_img_path)
 
 
 '''

@@ -30,7 +30,7 @@ init_cates = {
     'xiangcai'          : {'idx': 28, 'chiname':'香菜'}      ,
     'xianggu'           : {'idx': 29, 'chiname':'香菇'}      ,
     'qita'              : {'idx': 30, 'chiname':'其他'}      ,
-    'fire'              : {'idx': 31, 'chiname':'火'}      , 
+    'fire'              : {'idx': 31, 'chiname':'火'}      ,
 }
 
 id2dirname = {

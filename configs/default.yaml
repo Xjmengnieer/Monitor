@@ -1,13 +1,13 @@
 model:
   type: resnet50
-  num_classes: 31
+  num_classes: 32
   pretrained: True
 
 datasets:
   train:
-    root: '/home/data/monitor/init/train/'
+    root: 'data/monitor/init/train/'
   val:
-    root: '/home/data/monitor/init/val/'
+    root: 'data/monitor/init/val/'
 
   mean: [0.6078305894330078, 0.5706302081705229, 0.4601289363951588]
   std: [0.1008510393323826, 0.09764929025033584, 0.1044599268983488]
@@ -15,17 +15,17 @@ datasets:
   batch_size: 12
 
 train_param:
-  epoch: 200
-  save_path: './checkpoints'
-  save_interval: 20
+  epoch: 40
+  save_path: './checkpoints/'
+  save_interval: 5
 
   logger_name: 'monitor'
   log_interval_step: 50
-  logger_path: '/home/xjm/Code/monitor/log/{name}.txt'
+  logger_path: 'log/{name}.txt'
 
   writer_dir: './writer'
 
 inference:
-  data_path: '/home/data/monitor_inference/'
-  output: '/home/data/monitor_inference2/'
-  load_from: '/home/xjm/Code/monitor/checkpoints/0000000200.pth'
+  data_path: 'data/monitor_inference3/'
+  output: 'data/monitor_inference4/'
+  load_from: 'checkpoints_filter/0000000035.pth'
