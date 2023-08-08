@@ -1,9 +1,9 @@
 import os
 import torch
-
+import shutil
 import numpy as np
 
-from tqdm import tqdm
+from tqdm import tqdm # 进度条
 from PIL import Image
 from torchvision import transforms
 
@@ -14,13 +14,13 @@ def main(args):
     config = config_load(args.config)
     data_root_path = config.inference.data_path
     print(f'datasets root path is: {data_root_path}')
-    sub_dirs = os.listdir(data_root_path)
+    sub_dirs = os.listdir(data_root_path) # 获取所有子文件夹
 
     out_path = config.inference.output
 
     if config.inference.load_from:
         print(f'load from {config.inference.load_from}')
-        model = torch.load(config.inference.load_from, map_location='cpu').eval().cuda()
+        model = torch.load(config.inference.load_from, map_location='cpu').eval().cuda() # 加载模型
     else:
         model = bulid_classifier(config).eval().cuda()
 
@@ -31,12 +31,12 @@ def main(args):
     ]
     )
     preds = []
-    print(f'test dirs are {sub_dirs}')
+    print(f'test dirs are {sub_dirs}') 
     
     for dir_name in sub_dirs:
         dir_path = os.path.join(data_root_path, dir_name)
         imgs = os.listdir(dir_path)
-        par = tqdm(imgs)
+        par = tqdm(imgs) # 进度条
         for img in par:
             par.set_description(f'{dir_name} dir has been processed: ')
             img_path = os.path.join(dir_path, img)
@@ -47,13 +47,13 @@ def main(args):
             with torch.no_grad():
                 output = model(image)
                 
-            pred = torch.argmax(output,dim=-1)
+            pred = torch.argmax(output,dim=-1) # 获取预测结果
             if pred not in preds:
                 preds.append(pred)
             out_ = os.path.join(out_path, str(pred.cpu().numpy()[0]))
             mkdirs(out_)
             out_ = os.path.join(out_, img)
-            os.system(f'mv {img_path} {out_}')
+            shutil.copy(img_path, out_)
     
     print(preds)
     

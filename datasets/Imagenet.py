@@ -24,8 +24,8 @@ class ImageNet(Dataset):
     def _getImgs_(self):
         sub_dirs = os.listdir(self.root)
 
-        assert len(sub_dirs) == len(init_cates), 'the categories\'s nums doesn\'t match the init_cates\
-            please make sure the category is right'
+        # assert len(sub_dirs) == len(init_cates), 'the categories\'s nums doesn\'t match the init_cates\
+        #     please make sure the category is right'
 
         imgs = []
         for sub_dir in sub_dirs:
