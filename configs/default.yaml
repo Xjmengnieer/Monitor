@@ -24,6 +24,7 @@ train_param:
   logger_path: 'log/{name}.txt'
 
   writer_dir: './writer'
+  load_from: '/home/xjm/Code/monitor/checkpoints/0000000200.pth'
 
 inference:
   data_path: 'data/monitor_inference3/'
