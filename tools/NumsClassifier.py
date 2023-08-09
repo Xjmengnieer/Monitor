@@ -43,7 +43,26 @@ class Trainer():
 
         self.init_logger()
         self.init_writer()
-        self.init_model()
+
+
+    def init_model(self):
+        self.loggerInfo('Initializing model')
+        
+        if self.config.train_param.load_from:
+            # 从预训练模型中加载权重
+            old_model = torch.load(self.config.train_param.load_from, map_location='cpu').eval().cuda()
+            old_state_dicts = old_model.state_dict()
+
+            now_state_dicts = self.model.state_dict()
+
+            # 将预训练模型中与新模型权重形状相同的权重复制到新模型中
+            for k, v in now_state_dicts.items():
+                if k in old_state_dicts and v.shape == old_state_dicts[k].shape:
+                    v.copy_(old_state_dicts[k])
+
+            # 将初始化后的权重加载到新模型中
+            self.model.load_state_dict(now_state_dicts)
+
     
     def init_model(self):
         self.loggerInfo('Initializing model')
@@ -173,30 +192,10 @@ class Trainer():
 
 
 
+
 def main(args):
     config = config_load(args.config)
-    # model = bulid_classifier(config).cuda()
-    # 从预训练模型加载
-    model = torch.load(config.inference.load_from, map_location='cpu').cuda() 
-
-    # 增加模型输出层的类别数
-    num_classes_old = model.fc.out_features
-    num_classes_new = num_classes_old + 1  # 添加一个新的类别
-
-    # 创建一个新的全连接层用于新类别
-    new_fc_layer = nn.Linear(in_features=model.fc.in_features, out_features=num_classes_new)
-    # nn.init.xavier_uniform_(new_fc_layer.weight)  # 初始化新层的权重
-    # 将之前的权重复制到新的全连接层
-    with torch.no_grad():
-        new_fc_layer.weight[:num_classes_old, :] = model.fc.weight
-        new_fc_layer.bias[:num_classes_old] = model.fc.bias
-
-    # 初始化新增类别的权重
-    nn.init.xavier_uniform_(new_fc_layer.weight[num_classes_old:, :])
-    # 替换模型中的旧全连接层为新的全连接层
-    model.fc = new_fc_layer
-    model = model.cuda()
-
+    model = bulid_classifier(config).cuda()
     
     train_trans = transforms.Compose([
         transforms.RandomHorizontalFlip(p=0.3),
@@ -232,7 +231,7 @@ def main(args):
             scheduler,
             critertion,
             )
-    
+    trainer.init_model()
     trainer.train()
 
 
