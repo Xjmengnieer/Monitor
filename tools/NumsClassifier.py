@@ -42,7 +42,22 @@ class Trainer():
 
         self.init_logger()
         self.init_writer()
+        self.init_model()
     
+    def init_model(self):
+        self.loggerInfo('Initializing model')
+        if self.config.train_param.load_from:
+            old_model = torch.load(self.config.train_param.load_from, map_location='cpu').eval().cuda()
+            old_state_dicts = old_model.state_dict()
+
+            now_state_dicts = self.model.state_dict()
+
+            for k,v in now_state_dicts.items():
+                if v.shape == old_state_dicts[k].shape:
+                    now_state_dicts[k] = old_state_dicts[k]
+            
+            self.model.load_state_dict(now_state_dicts)
+
     def init_writer(self):
         self.loggerInfo('Initializing writer')
         self.writer = SummaryWriter(self.config.train_param.writer_dir)
