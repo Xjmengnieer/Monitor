@@ -45,7 +45,6 @@ class Trainer():
         self.init_writer()
         self.init_model()
 
-
     def init_model(self):
         self.loggerInfo('Initializing model')
         
@@ -145,7 +144,7 @@ class Trainer():
         # 单独看看火的正确率
         tp_label_31 = 0  # 记录label=31的真正例数
         p_label_31 = 0   # 记录label=31的总正例数
-
+        
         with torch.no_grad():
             for batch in par:
                 par.set_description(f'validation: ')

@@ -6,17 +6,24 @@ import numpy as np
 from tqdm import tqdm
 from PIL import Image
 from torchvision import transforms
-
+from torch.utils.data import DataLoader
 from monitor_model import bulid_classifier
 from utils import *
+from datasets.Imagenet import ImageNet
+
 
 def main(args):
     config = config_load(args.config)
-    data_root_path = config.inference.data_path
+    val_trans = transforms.Compose([
+        transforms.CenterCrop(225),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
+    ])
+    val_dataset = ImageNet(config.datasets.val.root, config.model.num_classes, transforms=val_trans)
+    val_dataloader = DataLoader(val_dataset, batch_size=config.datasets.batch_size)
+    data_root_path = config.datasets.val.root
     print(f'datasets root path is: {data_root_path}')
     sub_dirs = os.listdir(data_root_path)
-
-    out_path = config.inference.output
 
     if config.inference.load_from:
         print(f'load from {config.inference.load_from}')
@@ -24,45 +31,38 @@ def main(args):
     else:
         model = bulid_classifier(config).eval().cuda()
 
-    trans = transforms.Compose([
-        transforms.CenterCrop(225),
-        transforms.ToTensor(),
-        transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
-    ]
-    )
-    preds = []
-    print(f'test dirs are {sub_dirs}')
-    
-    for dir_name in sub_dirs:
-        dir_path = os.path.join(data_root_path, dir_name)
-        imgs = os.listdir(dir_path)
-        par = tqdm(imgs)
-        for img in par:
-            par.set_description(f'{dir_name} dir has been processed: ')
-            img_path = os.path.join(dir_path, img)
+    model.eval()
+    par = tqdm(val_dataloader)
+    tps = 0
+    gtA = 0
+    ppA = 0
+    threshold=0.999
+    with torch.no_grad():
+        for batch in par:
+                par.set_description(f'validation: ')
+                inputs, label = batch[0].cuda(),batch[1].cuda()
+                output = model(inputs)
+                pred = torch.sigmoid(output)
+                print(f'pred: {pred}')
+                pred = (pred > threshold).long()
+                tp = (label * pred).sum(axis=[0,1])
+                gt = label.sum(axis=[0,1])
+                pp = pred.sum(axis=[0,1])
+                # print(f'pred: {pred},label: {label}')              
+                # print(f'tp: {tp}, gt: {gt}, pp: {pp}')
+                ppA += pp
+                tps += tp
+                gtA += gt
 
-            image = Image.open(img_path).convert('RGB')
-            image = trans(image).unsqueeze(0).cuda()
+    recall = (tps / gtA)  #'%.4f'%
+    precession = (tps / ppA)
 
-            with torch.no_grad():
-                output = model(image)
-            
-            pred = torch.sigmoid(output)
-            pred_ = (pred > 0.5).long()
+    recall = (tps / gtA)
+    precession = (tps / ppA)
+    print(f'threshold: {threshold}')
+    print(f'recall: {recall}, precession: {precession}')
 
-            index = torch.where(pred_ == 1)
-            pred_classes = index[1]
-            pred = torch.argmax(output,dim=-1)
-            if pred not in preds:
-                preds.append(pred)
-            out_ = os.path.join(out_path, str(pred.cpu().numpy()[0]))
-            mkdirs(out_)
-            out_ = os.path.join(out_, img)
-            os.system(f'mv {img_path} {out_}')
-    
-    print(preds)
-    
-    
+
 if __name__ == '__main__':
     args = get_args()
     main(args)

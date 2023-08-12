@@ -42,6 +42,24 @@ class Trainer():
 
         self.init_logger()
         self.init_writer()
+        
+    def init_model(self):
+        self.loggerInfo('Initializing model')
+        
+        if self.config.train_param.load_from:
+            # 从预训练模型中加载权重
+            old_model = torch.load(self.config.train_param.load_from, map_location='cpu').eval().cuda()
+            old_state_dicts = old_model.state_dict()
+
+            now_state_dicts = self.model.state_dict()
+
+            # 将预训练模型中与新模型权重形状相同的权重复制到新模型中
+            for k, v in now_state_dicts.items():
+                if k in old_state_dicts and v.shape == old_state_dicts[k].shape:
+                    v.copy_(old_state_dicts[k])
+
+            # 将初始化后的权重加载到新模型中
+            self.model.load_state_dict(now_state_dicts)
     
     def init_writer(self):
         self.loggerInfo('Initializing writer')
@@ -102,7 +120,7 @@ class Trainer():
                 self.step += 1
 
                 if (self.step+1) % self.config.train_param.log_interval_step == 0:
-                    self.loggerInfo(loss)
+                    # self.loggerInfo(loss)
                     self.writer.add_scalar(f'train_loss', loss, self.step)
                     self.writer.add_scalar(f'L1_loss', loss1, self.step)
                     self.writer.add_scalar(f'MSE_loss', loss2, self.step)
@@ -125,14 +143,11 @@ class Trainer():
                 par.set_description(f'validation: ')
                 inputs, label = batch[0].cuda(),batch[1].cuda()
                 output = self.model(inputs)
-
                 pred = torch.sigmoid(output)
-                pred = (pred > 0.5).long()
-
+                pred = (pred > 0.8).long()
                 tp = (label * pred).sum(axis=[0,1])
                 gt = label.sum(axis=[0,1])
-                pp = pred.sum(axis=[0,1])
-
+                pp = pred.sum(axis=[0,1])              
                 ppA += pp
                 tps += tp
                 gtA += gt
@@ -185,7 +200,7 @@ def main(args):
             scheduler,
             critertion,
             )
-    
+    trainer.init_model()
     trainer.train()
 
 
