@@ -15,7 +15,7 @@ from datasets.Imagenet import ImageNet
 def main(args):
     config = config_load(args.config)
     val_trans = transforms.Compose([
-        transforms.CenterCrop(225),
+        transforms.CenterCrop(512),
         transforms.ToTensor(),
         transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
     ])
@@ -36,14 +36,14 @@ def main(args):
     tps = 0
     gtA = 0
     ppA = 0
-    threshold=0.999
+    threshold=0.9
     with torch.no_grad():
         for batch in par:
                 par.set_description(f'validation: ')
                 inputs, label = batch[0].cuda(),batch[1].cuda()
                 output = model(inputs)
                 pred = torch.sigmoid(output)
-                print(f'pred: {pred}')
+                # print(f'pred: {pred}')
                 pred = (pred > threshold).long()
                 tp = (label * pred).sum(axis=[0,1])
                 gt = label.sum(axis=[0,1])

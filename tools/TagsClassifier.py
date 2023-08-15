@@ -177,7 +177,7 @@ def main(args):
         transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
     ])
     val_trans = transforms.Compose([
-        transforms.CenterCrop(225),
+        transforms.CenterCrop(512),
         transforms.ToTensor(),
         transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
     ])
