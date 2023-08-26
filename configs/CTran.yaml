@@ -1,18 +1,34 @@
 model:
-  type: resnet50
+  type: CTran
   num_classes: 32
   pretrained: True
+  use_lmt: True
+  pos_emb: False
+  layers: 3
+  heads: 4
+  dropout: 0.1
+  int_loss: 0
+  no_x_features: False
 
 datasets:
+  type: CTranData
   train:
     root: '/home/data/monitor/init/train/'
+    known_labels: 100
+    testing: False
+    num_classes: 32 
+
   val:
     root: '/home/data/monitor/init/val/'
+    known_labels: 100
+    testing: False
+    num_labels: 80
+    num_classes: 32 
 
   mean: [0.6078305894330078, 0.5706302081705229, 0.4601289363951588]
   std: [0.1008510393323826, 0.09764929025033584, 0.1044599268983488]
 
-  batch_size: 12
+  batch_size: 4
 
 train_param:
   epoch: 40
