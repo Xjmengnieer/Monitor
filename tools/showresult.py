@@ -15,7 +15,7 @@ def classify_image(image):
         model = bulid_classifier(config).eval().cuda()
 
     trans = transforms.Compose([
-        transforms.CenterCrop(225),
+        transforms.CenterCrop(512),
         transforms.ToTensor(),
         transforms.Normalize(mean=config.datasets.mean, std=config.datasets.std)
     ])
