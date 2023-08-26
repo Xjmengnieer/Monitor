@@ -98,8 +98,8 @@ class Trainer():
         self.step = 0
         mkdirs(self.config.train_param.save_path)
 
-        # criterion1 = nn.L1Loss()
-        # criterion2 = nn.MSELoss()
+        criterion1 = nn.L1Loss()
+        criterion2 = nn.MSELoss()
 
         for epoch in range(self.epoch):
             self.val()                              # 每个epoch都进行一次验证
@@ -110,11 +110,11 @@ class Trainer():
                 output = self.model(inputs)
 
                 loss0 = self.criterion(output, label)
-                # output_logit = torch.sigmoid(output)
-                # loss1 = criterion1(output_logit, label)
-                # loss2 = criterion2(output_logit, label)
+                output_logit = torch.sigmoid(output)
+                loss1 = criterion1(output_logit, label)
+                loss2 = criterion2(output_logit, label)
 
-                loss = loss0 #  + loss1 + loss2
+                loss = loss0   + loss1 + loss2
                 self.optimizer.zero_grad()
                 loss.backward()
                 self.optimizer.step()
@@ -125,8 +125,8 @@ class Trainer():
                 if (self.step+1) % self.config.train_param.log_interval_step == 0:
                     # self.loggerInfo(loss)
                     self.writer.add_scalar(f'train_loss', loss, self.step)
-                    # self.writer.add_scalar(f'L1_loss', loss0, self.step)
-                    # self.writer.add_scalar(f'MSE_loss', loss0, self.step)
+                    self.writer.add_scalar(f'L1_loss', loss0, self.step)
+                    self.writer.add_scalar(f'MSE_loss', loss0, self.step)
 
             self.scheduler.step()
 

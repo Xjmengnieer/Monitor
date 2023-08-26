@@ -10,17 +10,26 @@ from PIL import Image
 # from dir2id import dir2id
 from .init_train_cate import init_cates
 
-from .builder import Datasets
+from datasets import Datasets
+from typing import Type, Any, Callable, Union, List, Optional
 
-@Datasets.register_module
-class ImageNet(Dataset):
-    def __init__(self, root, num_classes, transforms = None) -> None:
+@Datasets.register_dataset('CTranData')
+class CTranData(Dataset):
+    def __init__(self, root,
+                 num_classes, 
+                 known_labels = 0, 
+                 testing = False,
+                 **kwargs: Any) -> None:
         super().__init__()
         self.root = root
         self.num_classes = num_classes
         self.imgs = self._getImgs_()
-        self.transforms = transforms
+        self.known_labels = known_labels
+        self.testing = testing
+        self.num_labels = num_classes
 
+    def add_transforms(self, transforms):
+        self.transforms = transforms
     def __len__(self):
         return len(self.imgs)
 
@@ -74,5 +83,35 @@ class ImageNet(Dataset):
 
         label_one_hot = np.zeros(self.num_classes)
         label_one_hot[label] = 1
+        label_one_hot = torch.from_numpy(label_one_hot)
 
-        return img, label_one_hot
+        unk_mask_indices = get_unk_mask_indices(img, self.testing, self.num_labels,self.known_labels)
+        
+        mask = label_one_hot.clone()
+        mask.scatter_(0,torch.Tensor(unk_mask_indices).long() , -1)
+
+        sample = {}
+        sample['image'] = img
+        sample['labels'] = label_one_hot
+        sample['mask'] = mask
+        # sample['imageIDs'] = image_ID
+
+        return sample
+
+import hashlib
+def get_unk_mask_indices(image,testing,num_labels,known_labels,epoch=1):
+    if testing:
+        # for consistency across epochs and experiments, seed using hashed image array 
+        random.seed(hashlib.sha1(np.array(image)).hexdigest())
+        unk_mask_indices = random.sample(range(num_labels), (num_labels-int(known_labels)))
+    else:
+        # sample random number of known labels during training
+        if known_labels>0:
+            random.seed()
+            num_known = random.randint(0,int(num_labels*0.75))
+        else:
+            num_known = 0
+
+        unk_mask_indices = random.sample(range(num_labels), (num_labels-num_known))
+
+    return unk_mask_indices

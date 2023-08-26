@@ -19,7 +19,7 @@ from torch.utils.tensorboard import SummaryWriter
 from monitor_model import bulid_classifier
 from datasets.Imagenet import ImageNet
 from datasets.mosaic import mosaic
-from utils import *
+from utils import config_load, get_args, mkdirs
 
 class Trainer():
     def __init__(self, model, config,
@@ -177,7 +177,7 @@ def main(args):
         transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
     ])
     val_trans = transforms.Compose([
-        transforms.CenterCrop(225),
+        transforms.CenterCrop(512),
         transforms.ToTensor(),
         transforms.Normalize(mean = config.datasets.mean, std = config.datasets.std)
     ])
