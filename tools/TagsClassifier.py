@@ -18,7 +18,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 from monitor_model import bulid_classifier
 from datasets.Imagenet import ImageNet
-from datasets.mosaic import mosaic
+from datasets import mosaic
 from utils import config_load, get_args, mkdirs
 
 class Trainer():
@@ -130,7 +130,7 @@ class Trainer():
             if (epoch+1) % self.config.train_param.save_interval == 0:
                 save_path = os.path.join(self.config.train_param.save_path, f'%010d'%(epoch + 1)+'.pth')
                 torch.save(self.model, save_path)
-            
+
     def val(self):
         self.loggerInfo('start validation')
         self.model.eval()

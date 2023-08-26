@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from PIL import Image
 # from dir2id import dir2id
-from .init_train_cate import init_cates
+from .utils import init_cates
 
 from datasets import Datasets
 from typing import Type, Any, Callable, Union, List, Optional

@@ -18,7 +18,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 from monitor_model import bulid_classifier
 from datasets import bulid_dataset
-from datasets.mosaic import mosaic
+from datasets import mosaic
 from utils import *
 
 def main(args):

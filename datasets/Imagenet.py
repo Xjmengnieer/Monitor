@@ -8,11 +8,11 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from PIL import Image
 # from dir2id import dir2id
-from .init_train_cate import init_cates
+from .utils import init_cates
 
 from .builder import Datasets
 
-@Datasets.register_module
+@Datasets.register_module('ImageNet')
 class ImageNet(Dataset):
     def __init__(self, root, num_classes, transforms = None) -> None:
         super().__init__()
