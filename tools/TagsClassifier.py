@@ -20,7 +20,19 @@ from monitor_model import bulid_classifier
 from datasets.Imagenet import ImageNet
 from datasets import mosaic
 from utils import config_load, get_args, mkdirs
+import torch.nn.functional as F
+class FocalLoss(nn.Module):
+    def __init__(self, gamma=2, alpha=0.5):
+        super(FocalLoss, self).__init__()
+        self.gamma = gamma
+        self.alpha = alpha
 
+    def forward(self, inputs, targets):
+        BCE_loss = F.binary_cross_entropy_with_logits(inputs, targets, reduction='none')
+        pt = torch.exp(-BCE_loss)  # 计算正样本的概率
+        focal_loss = self.alpha * (1 - pt) ** self.gamma * BCE_loss  # Focal Loss公式
+        return torch.mean(focal_loss)
+    
 class Trainer():
     def __init__(self, model, config,
                  train_dataloader,
@@ -98,6 +110,7 @@ class Trainer():
 
         criterion1 = nn.L1Loss()
         criterion2 = nn.MSELoss()
+        criterion_focal = FocalLoss()
         for epoch in range(self.epoch):
             self.val()
             par = tqdm(self.train_dataloader)
@@ -110,8 +123,9 @@ class Trainer():
                 output_logit = torch.sigmoid(output)
                 loss1 = criterion1(output_logit, label)
                 loss2 = criterion2(output_logit, label)
-
-                loss = loss0 + loss1 + loss2
+                loss_focal = criterion_focal(output_logit, label)  # Focal Loss
+                
+                loss = loss0 + loss1 + loss2+loss_focal
                 self.optimizer.zero_grad()
                 loss.backward()
                 self.optimizer.step()

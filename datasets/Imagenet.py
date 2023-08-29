@@ -54,7 +54,7 @@ class ImageNet(Dataset):
                         m_trans = transforms.Compose(b_trans)
                         imgs = [transforms.CenterCrop(256)(img)]
                         labels = [label]
-                        for _ in range(3):
+                        for _ in range(random.randint(4, 12)):
                             random_index = random.randint(0, len(self.imgs)-1)
                             m_img_path, m_label = self.imgs[random_index]
                             m_img = Image.open(m_img_path).convert('RGB')
